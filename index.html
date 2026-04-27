@@ -1,17 +1,18 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Calculadora de Prazo</title>
+  <title>Cálculo de prazo inteligente</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="pagina">
     <div class="container">
-      <h1>Calculadora de Prazo</h1>
+      <h1>Cálculo de prazo inteligente</h1>
 
-      <label for="dataInicial">Data de Hoje</label>
+      <label for="dataInicial">Data Inicial</label>
       <div class="input-wrapper">
         <input type="date" id="dataInicial" />
         <span class="calendar-icon">📅</span>
@@ -21,6 +22,7 @@
       <input type="number" id="dias" placeholder="Ex: 20" min="1" />
 
       <button onclick="calcularPrazo()">CALCULAR PRAZO</button>
+      <button class="btn-limpar" onclick="limparCampos()">LIMPAR</button>
 
       <div class="resultado" id="resultado">
         <span>Data final:</span>
