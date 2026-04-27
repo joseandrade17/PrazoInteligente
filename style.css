@@ -1,3 +1,4 @@
+/* style.css */
 * {
   margin: 0;
   padding: 0;
@@ -16,36 +17,27 @@ body {
   overflow-x: hidden;
 }
 
-/* Estrutura principal */
 .pagina {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   width: 100%;
   max-width: 500px;
   position: relative;
-  z-index: 1;
 }
 
-/* Fundo igual ao anterior */
 .pagina::before {
   content: '';
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background-image:
     radial-gradient(circle, rgba(255,255,255,0.15) 1px, transparent 1px),
     url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><circle cx="10" cy="10" r="1" fill="white"/></svg>');
   background-size: 40px 40px, 60px 60px;
   opacity: 0.25;
-  pointer-events: none;
   z-index: -1;
 }
 
-/* Card principal */
 .container {
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(12px);
@@ -56,25 +48,19 @@ body {
   max-width: 420px;
 }
 
-/* Título */
 h1 {
   text-align: center;
   margin-bottom: 30px;
   font-size: 2rem;
   color: #1a1a2e;
-  font-weight: 700;
 }
 
-/* Labels */
 label {
   display: block;
   margin-bottom: 8px;
   font-weight: 600;
-  color: #2c3e50;
-  font-size: 1rem;
 }
 
-/* Inputs */
 .input-wrapper {
   position: relative;
   margin-bottom: 20px;
@@ -87,7 +73,6 @@ input[type="number"] {
   border: 2px solid #e0e0e0;
   border-radius: 12px;
   font-size: 1rem;
-  background: white;
 }
 
 input[type="number"] {
@@ -99,84 +84,53 @@ input[type="number"] {
   right: 15px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 1.2rem;
-  pointer-events: none;
 }
 
-input:focus {
-  outline: none;
-  border-color: #4a90e2;
-  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
-}
-
-/* Botão */
 button {
   width: 100%;
-  padding: 16px;
-  margin: 10px 0 25px;
+  padding: 15px;
+  margin: 8px 0;
   border: none;
   border-radius: 50px;
-  background: linear-gradient(90deg, #3b7cd3, #6a4fc1);
   color: white;
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.3s;
-  box-shadow: 0 8px 20px rgba(59, 124, 211, 0.35);
 }
 
-button:hover {
-  transform: translateY(-2px);
+button:first-of-type {
+  background: linear-gradient(90deg, #3b7cd3, #6a4fc1);
 }
 
-/* Resultado */
+.btn-limpar {
+  background: linear-gradient(90deg, #ff6b6b, #e63946);
+}
+
 .resultado {
-  margin-top: 10px;
+  margin-top: 20px;
   padding: 20px;
   background: #f8f9ff;
   border: 2px dashed #b0c4ff;
   border-radius: 14px;
   text-align: center;
-  min-height: 80px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  transition: 0.3s;
-}
-
-.resultado span {
-  font-size: 1rem;
-  color: #555;
 }
 
 .resultado strong {
-  font-size: 1.6rem;
-  color: #2c3e50;
+  display: block;
+  margin-top: 6px;
+  font-size: 1.5rem;
+}
+.calendar-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* O clique vai passar direto para o input */
 }
 
-/* Rodapé */
 footer {
   margin-top: 18px;
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255,255,255,0.9);
   text-align: center;
-  line-height: 1.5;
-  max-width: 420px;
-}
-
-/* Responsivo */
-@media (max-width: 480px) {
-  .container {
-    padding: 25px 20px;
-  }
-
-  h1 {
-    font-size: 1.6rem;
-  }
-
-  .resultado strong {
-    font-size: 1.3rem;
-  }
 }
